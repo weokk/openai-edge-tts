@@ -2,17 +2,16 @@
   "version": 2,
   "builds": [
     {
-      "src": "app/server.py", //  指向你的主应用文件
+      "src": "app/server.py", 
       "use": "@vercel/python",
       "config": {
-        // "maxLambdaSize": "15mb", // 如果需要，可以调整大小限制
-        "runtime": "python3.9"  // 或者你项目兼容的 Python 版本 (e.g., 3.10, 3.11)
+        
+        "runtime": "python3.9"  
        }
     }
   ],
   "routes": [
     {
-      // 将所有请求路由到你的 Python 应用
       "src": "/(.*)",
       "dest": "app/server.py"
     }
